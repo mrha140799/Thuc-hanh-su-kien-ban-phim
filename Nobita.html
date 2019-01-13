@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeGym</title>
+</head>
+<body onload="DoReady();">
+    <img id="IdNobita" src="https://james.codegym.vn/pluginfile.php/10805/mod_assign/intro/1.png" style="position: absolute ; left: 0 ; top: 0; height: 100px ; width: 80px">
+    <script>
+        function UpArrowPressed() {
+            var element = document.getElementById("IdNobita");
+
+                element.style.top = parseInt(element.style.top) - 5 + "px";
+        }
+        function DownArrowPressed() {
+            var element = document.getElementById("IdNobita");
+                element.style.top = parseInt(element.style.top) + 5 + "px";
+        }
+        function LeftArrowPressed() {
+            var element = document.getElementById("IdNobita");
+                element.style.left = parseInt(element.style.left) -5 + "px";
+        }
+        function RightArrowPressed() {
+            var element = document.getElementById("IdNobita");
+                element.style.left = parseInt(element.style.left) +5 + "px";
+        }
+        function MoveSelection(evt) {
+            switch (evt.keyCode) {
+                case 37:
+                    LeftArrowPressed();
+                    break;
+                case 39:
+                    RightArrowPressed();
+                    break;
+                case 38:
+                    UpArrowPressed();
+                    break;
+                case 40:
+                    DownArrowPressed();
+                    break;
+            }
+        }
+        function DoReady() {
+            window.addEventListener('keydown',MoveSelection);
+        }
+
+    </script>
+
+
+
+</body>
+</html>
